@@ -4,7 +4,7 @@
 // M5 NOTE: SHA-256 senza salt è sufficiente per una singola installazione privata
 // locale/Supabase. Per deployment multi-utente o pubblico, sostituire con
 // Argon2/bcrypt via backend (Supabase Edge Function) e non esporre il hash nel JS.
-const PASSWORD_HASH = "4308b16b088ef46766393f253ec3d48d96dfc04e80712cc0c55f0491c848fbad";
+const PASSWORD_HASH = "4046c085c4f0ef2fa5f409b7ba5090cc51bb7472f9e3c54564ad0ae6f9befc4b";
 
 // ─── CONFIG — progetto Palinurobar (istanza dedicata, nessun legame con altri locali) ──
 // Identità e partizione dati sono di Palinurobar. L'host HTML può ancora fornire
