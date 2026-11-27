@@ -548,6 +548,37 @@ input,select,textarea,button{font-family:var(--font-sans)}
 .login-logo .brand-wordmark{max-width:200px}
 .login-logo-icon img{height:46px!important}
 </style>
+<script>
+/* FURIA · tema chiaro/scuro: segue il telefono, il pulsante lo fissa */
+(function(){var K="fu_theme",D=document.documentElement,Q=window.matchMedia?matchMedia("(prefers-color-scheme: dark)"):null;
+var MOON='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>',SUN='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>';
+function saved(){try{return localStorage.getItem(K)}catch(e){return null}}
+function apply(t){D.setAttribute("data-theme",t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="dark"?"#0E1238":"#E9EAE4");
+var bs=document.querySelectorAll(".fu-theme-btn");for(var i=0;i<bs.length;i++){bs[i].innerHTML=t==="dark"?SUN:MOON;bs[i].setAttribute("aria-label",t==="dark"?"Tema chiaro":"Tema scuro");bs[i].title=t==="dark"?"Tema chiaro":"Tema scuro";}}
+apply(saved()||(Q&&Q.matches?"dark":"light"));
+if(Q&&Q.addEventListener)Q.addEventListener("change",function(e){if(!saved())apply(e.matches?"dark":"light")});
+window.fuToggleTheme=function(){var t=D.getAttribute("data-theme")==="dark"?"light":"dark";try{localStorage.setItem(K,t)}catch(e){}apply(t)};
+window.fuThemeButton=function(){var b=document.createElement("button");b.type="button";b.className="fu-theme-btn";b.onclick=window.fuToggleTheme;return b};
+window.fuThemeApply=function(){apply(D.getAttribute("data-theme")||"light")};})();
+</script>
+<style id="fu-dark">
+/* FURIA · tema scuro del gestionale: blu notte e crema */
+html[data-theme="dark"]{color-scheme:dark;
+  --bg:#0E1238!important;--bg2:#141A47!important;--bg3:#1B2257!important;--border:rgba(233,234,228,.12)!important;--border2:rgba(233,234,228,.26)!important;
+  --txt:#E9EAE4!important;--txt1:#E9EAE4!important;--txt2:#D3D5E2!important;--txt3:#A3A7C7!important;--txt4:#7D82A8!important;
+  --amber:#E9EAE4!important;--amber2:#D6D8CF!important;--amber3:#E9EAE4!important;--amber4:#2A3270!important;
+  --amber-rgb:233,234,228!important;--amber3-rgb:233,234,228!important;--amber-glow:0 0 0 3px rgba(233,234,228,.2)!important;
+  --accent:#AEB4FF!important;--accent2:#C4C8FF!important;--blue:#AEB4FF!important;
+  --green:#7FBF8E!important;--red:#F07A6E!important;--orange:#F0A458!important;
+  --glass:#0E1238!important;--glass-border:rgba(233,234,228,.12)!important;
+  --ink:#E9EAE4!important;--n-50:#141A47!important;--n-100:#1B2257!important;--n-200:rgba(233,234,228,.26)!important;--n-500:#A3A7C7!important;--n-700:#E9EAE4!important;--n-900:#E9EAE4!important}
+html[data-theme="dark"] .btn-primary,html[data-theme="dark"] .mob-confirm-btn,html[data-theme="dark"] #mob-toast-undo{color:#1C269A!important}
+html[data-theme="dark"] img[src*="logo.svg"],html[data-theme="dark"] img[src*="alga.svg"]{filter:brightness(0) invert(1);opacity:.92}
+html[data-theme="dark"] #mob-topbar{background:#141A47!important}
+.fu-theme-btn{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+  border:1px solid var(--border2);background:transparent;color:var(--txt);cursor:pointer;margin-left:8px}
+.fu-theme-btn.fu-float{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:9000;background:var(--bg2)}
+</style>
 </head>
 <body>
 
@@ -822,5 +853,6 @@ input,select,textarea,button{font-family:var(--font-sans)}
   </div>
 </div>
 
+<script>(function(){var t=document.getElementById("topbar");if(t)t.appendChild(window.fuThemeButton());var r=document.getElementById("mob-topbar-row1");if(r)r.appendChild(window.fuThemeButton());var l=document.getElementById("login-screen");if(l){var b=window.fuThemeButton();b.className+=" fu-float";l.appendChild(b);}window.fuThemeApply();})();</script>
 </body>
 </html>
