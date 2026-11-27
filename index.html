@@ -759,9 +759,9 @@ html[data-theme="dark"] #mob-topbar{background:#141A47!important}
 
 <!-- ── CONFIG LOCALE · FURIA ───────────────────────────────────────────────
      Deve stare PRIMA di manager.js. Copia della base Osteria Lagrandissima.
-     Database Supabase NON ancora collegato: senza credenziali (lsPrefix "fu_")
-     il gestionale gira in modalita' "solo locale". Non inserire dati reali
-     finche' non e' collegato il progetto Supabase di Furia.
+     Database Supabase di Furia collegato (progetto furia-cantina-manager):
+     URL e chiave publishable sono precompilati qui sotto, subito prima di
+     manager.js (lsPrefix "fu_").
      TODO: giorniApertura / serviziGiorno / turniDiurni / chiusure / authAdmins
            da confermare; gruppo e trasferimenti da decidere (ragione sociale). -->
 <script>
@@ -790,6 +790,19 @@ html[data-theme="dark"] #mob-topbar{background:#141A47!important}
     barFusti:            false,
     barPrezzi:           { birre: 8 }
   };
+</script>
+<!-- DATABASE SUPABASE · FURIA ─────────────────────────────────────────────
+     Precompila URL e chiave pubblica (publishable) su ogni dispositivo,
+     cosi' chi apre il link non deve configurare nulla. La chiave publishable
+     e' pensata per stare nel browser: i dati restano protetti da login + RLS. -->
+<script>
+  (function(){
+    var p = (window.CM_CONFIG && window.CM_CONFIG.lsPrefix) || "cm_";
+    try{
+      localStorage.setItem(p + "sb_url", "https://tkzqbdmbrcxrgtlsbllz.supabase.co");
+      localStorage.setItem(p + "sb_key", "sb_publishable_E6khHyFZQvJgHTzDXgDmvA_H7QeVkHC");
+    }catch(e){}
+  })();
 </script>
 <script src="manager.js?v=20261121magnum"></script>
 <script src="bar.js?v=20261019cal"></script>
