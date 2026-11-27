@@ -453,28 +453,27 @@ html:has(#mob-screen[style*="flex"]) body{background:var(--n-50);color:var(--ink
 .db-dot.ok{background:var(--green)!important}
 </style>
 
-<!-- ══ FURIA · IDENTITÀ (bozza 25/11/2026) ══
-     Dal profilo Instagram: logotipo F·V·R·I·A sottile e spaziato, blu
-     oltremare, giallo oro dei cavalli e della stella, crema.
-     Fondo oltremare-notte per la penombra, testo crema, un solo accento oro.
-     Archivo: largo e leggero per i titoli (eco del logotipo), normale per il
-     resto. Niente corsivi, vetri, bagliori. Vale anche su mobile. -->
+<!-- ══ FURIA · IDENTITÀ (27/11/2026) ══
+     Allineata al sito e alla carta stampata: fondo crema #E9EAE4, tutto
+     in blu #1C269A, Helvetica regular per il testo e bold per i titoli,
+     comandi con filo blu. Logo e cavallino ufficiali (Drive Furia).
+     Niente corsivi, vetri, bagliori. Vale anche su mobile. -->
 <style id="fu-brand">
 :root,html:has(#mob-screen[style*="flex"]){
-  --font-sans:'Archivo',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --font-sans:'Helvetica Neue',Helvetica,Arial,sans-serif;
   --font-serif:var(--font-sans);
-  --navy:#2A12A0;
-  --bg:#0F0A2E;--bg2:#160F3D;--bg3:#1F174F;--border:#271D5E;--border2:#382C7A;
-  --txt:#EFEBE0;--txt1:#EFEBE0;--txt2:#D9D4C6;--txt3:#A9A3C4;--txt4:#7F79A3;
-  --amber:#F5C21B;--amber2:#E3AE0A;--amber3:#C3940F;--amber4:#5C4708;
-  --amber-rgb:245,194,27;--amber3-rgb:195,148,15;
-  --amber-glow:0 0 0 3px rgba(245,194,27,.22);
-  --accent:#9C8CFF;--accent2:#7D6BF2;--blue:#9C8CFF;
-  --green:#7FBF8E;--red:#F07A6E;--orange:#F0A458;
-  --glass:#130C36;--glass-border:#271D5E;
-  --shadow-sm:none;--shadow-md:0 6px 20px rgba(0,0,0,.4);--shadow-lg:0 12px 36px rgba(0,0,0,.5);
-  --ink:#EFEBE0;--n-50:#0F0A2E;--n-100:#1F174F;--n-200:#382C7A;--n-500:#9C8CFF;--n-700:#F5C21B;--n-900:#EFEBE0;
-  color-scheme:dark;
+  --navy:#1C269A;
+  --bg:#E9EAE4;--bg2:#F2F3EF;--bg3:#E0E1DA;--border:rgba(28,38,154,.16);--border2:rgba(28,38,154,.32);
+  --txt:#1C269A;--txt1:#1C269A;--txt2:#2F38A3;--txt3:#5A61B5;--txt4:#8489C6;
+  --amber:#1C269A;--amber2:#141C78;--amber3:#1C269A;--amber4:#C9CCE8;
+  --amber-rgb:28,38,154;--amber3-rgb:28,38,154;
+  --amber-glow:0 0 0 3px rgba(28,38,154,.18);
+  --accent:#1C269A;--accent2:#141C78;--blue:#1C269A;
+  --green:#2E7D4F;--red:#B3261E;--orange:#B5631A;
+  --glass:#E9EAE4;--glass-border:rgba(28,38,154,.16);
+  --shadow-sm:none;--shadow-md:0 4px 14px rgba(28,38,154,.10);--shadow-lg:0 10px 30px rgba(28,38,154,.14);
+  --ink:#1C269A;--n-50:#F2F3EF;--n-100:#E0E1DA;--n-200:rgba(28,38,154,.32);--n-500:#5A61B5;--n-700:#1C269A;--n-900:#1C269A;
+  color-scheme:light;
 }
 html:has(#mob-screen[style*="flex"]) body,body{background:var(--bg);color:var(--txt);font-family:var(--font-sans);-webkit-font-smoothing:antialiased}
 *{font-style:normal!important}
@@ -504,13 +503,13 @@ input,select,textarea,button{font-family:var(--font-sans)}
 .login-logo p{display:none}
 
 /* Titoli: Archivo largo e leggero, spaziato come F·V·R·I·A. Numeri: pieni ma non pesanti */
-.kpi-val,.giacenza-big,.calc-val,.mob-giacenza,.inv-table .giacenza-big{font-family:var(--font-sans)!important;font-weight:500!important;font-stretch:115%;letter-spacing:0}
-.modal-header h2,#topbar h1{font-family:var(--font-sans)!important;font-weight:300!important;font-stretch:125%;letter-spacing:.14em;text-transform:uppercase}
+.kpi-val,.giacenza-big,.calc-val,.mob-giacenza,.inv-table .giacenza-big{font-family:var(--font-sans)!important;font-weight:700!important;letter-spacing:0}
+.modal-header h2,#topbar h1{font-family:var(--font-sans)!important;font-weight:700!important;letter-spacing:.01em;text-transform:uppercase}
 .ss-label{font-family:var(--font-sans)!important;font-size:11px!important;color:var(--txt3)!important}
-.section-label em{font-family:var(--font-sans)!important;font-weight:400;font-stretch:125%;letter-spacing:.1em;text-transform:uppercase;color:var(--txt)!important}
+.section-label em{font-family:var(--font-sans)!important;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--txt)!important}
 
-/* Bottone primario: oro su testo scuro, leggibile al buio */
-.btn-primary{background:var(--amber)!important;color:#1A1300!important}
+/* Bottone primario: blu pieno, testo crema */
+.btn-primary{background:var(--amber)!important;color:#E9EAE4!important}
 .btn-primary:hover{background:var(--amber2)!important}
 
 /* Mobile: scuro anche qui (in sala/cantina la luce è bassa) */
@@ -526,21 +525,28 @@ input,select,textarea,button{font-family:var(--font-sans)}
 .mob-btn-minus{background:rgba(240,122,110,.1);border-color:rgba(240,122,110,.35);color:var(--red)}
 .mob-btn-plus{background:rgba(127,191,142,.1);border-color:rgba(127,191,142,.35);color:var(--green)}
 #mob-toast{background:var(--bg3)!important;color:var(--txt)!important;border-color:var(--amber3)!important}
-#mob-toast-undo{background:var(--amber)!important;color:#1A1300!important}
+#mob-toast-undo{background:var(--amber)!important;color:#E9EAE4!important}
 .mob-stepper{background:var(--bg3)!important;border-color:var(--border2)!important}
 .mob-step-btn{color:var(--txt)!important}
 .mob-step-btn:active{background:var(--bg2)!important}
 .mob-step-val{background:var(--bg2)!important;color:var(--txt)!important}
-.mob-confirm-btn{background:var(--amber)!important;border-color:var(--amber)!important;color:#1A1300!important}
+.mob-confirm-btn{background:var(--amber)!important;border-color:var(--amber)!important;color:#E9EAE4!important}
 .mob-acc-header{background:var(--bg2)!important}
 </style>
 <style id="fu-extra">
 /* Barra superiore mobile in oltremare pieno, come i post del locale */
-#mob-topbar{background:var(--navy)!important;border-bottom:1px solid rgba(0,0,0,.25)!important}
-#mob-topbar input{background:#fff!important;border-color:transparent!important;color:#14102E!important}
-#mob-topbar input::placeholder{color:#6F6A8C}
+#mob-topbar{background:var(--navy)!important;border-bottom:0!important}
+#mob-topbar-row1 h2,#mob-topbar-row1 h2 *,#mob-db-label{color:#E9EAE4!important}
+#mob-topbar input{background:#E9EAE4!important;border-color:transparent!important;color:#1C269A!important}
+#mob-topbar input::placeholder{color:#5A61B5}
 #mob-topbar button,#mob-exit-btn{border-color:rgba(255,255,255,.4)!important;color:#fff!important}
-.login-logo h1::after{content:"Ristorante senza sella";display:block;margin-top:10px;font-weight:400;letter-spacing:.3em;font-size:10px;color:var(--txt4)}
+.login-logo h1::after{content:"Ristorante senza sella";display:block;margin-top:10px;font-weight:400;letter-spacing:.02em;font-size:12px;color:var(--txt)}
+/* Comandi secondari: filo blu 1px a pillola, come sul sito */
+.btn-outline,.btn-ghost{border:1px solid var(--txt)!important;color:var(--txt)!important;background:transparent!important}
+#sidebar{border-right:1px solid var(--border)!important}
+.brand-wordmark{max-width:140px}
+.login-logo .brand-wordmark{max-width:200px}
+.login-logo-icon img{height:46px!important}
 </style>
 </head>
 <body>
